@@ -1,0 +1,20 @@
+name: Iveric
+type: theme
+description: 'Iveric Theme.'
+core: 8.x
+core_version_requirement: ^8 || ^9 || ^10
+base theme: false 
+
+libraries:
+  - iveric/global-styling
+
+screenshot: screenshot.png
+logo: iveric_logo.svg
+
+regions:
+  logo: Logo
+  menu: Primary Menu
+  content: Content
+  footer_logo: Footer Logo
+  footer_menu: Footer Menu
+  copyright: Copyright

@@ -1,0 +1,29 @@
+{% if "On" in content.field_condition[0] %}
+<section class="intro">
+	<div class="container">
+		<h2 class="about">
+			<strong>
+				{{content.field_content}}
+			</strong>
+		</h2>
+		<div class="action d-inline-block d-xl-none">
+			{# <button class="nav-btn btn btn-outline-primary rounded navTrigger" type="button" data-view="popupGetConnected">
+				<span>GET CONNECTED</span>
+				<i class="i i-arrow_forward"></i>
+			</button> #}
+            {{drupal_block('block_content:19413953-c553-41eb-953d-feaaa31a709d')}}
+            
+		</div>
+	</div>
+</section>
+{% else %}
+<section class="disclaimer">
+	<div class="container">
+		<p>{{content.field_content}}</p>
+	</div>
+
+</section>
+{% endif %}
+
+
+

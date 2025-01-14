@@ -1,0 +1,110 @@
+{#
+  /**
+  * @file
+  * Default theme implementation for the basic structure of a single Drupal page.
+  *
+  * Variables:
+  * - logged_in: A flag indicating if user is logged in.
+  * - root_path: The root path of the current page (e.g., node, admin, user).
+  * - node_type: The content type for the current node, if the page is a node.
+  * - head_title: List of text elements that make up the head_title variable.
+  * May contain one or more of the following:
+  * - title: The title of the page.
+  * - name: The name of the site.
+  * - slogan: The slogan of the site.
+  * - page_top: Initial rendered markup. This should be printed before 'page'.
+  * - page: The rendered page markup.
+  * - page_bottom: Closing rendered markup. This variable should be printed after
+  * 'page'.
+  * - db_offline: A flag indicating if the database is offline.
+  * - placeholder_token: The token for generating head, css, js and js-bottom
+  * placeholders.
+  *
+  * @see template_preprocess_html()
+  *
+  * @ingroup themeable
+  */
+#}
+<!DOCTYPE html>
+<html{{ html_attributes }}>
+
+<head>
+    <head-placeholder token="{{ placeholder_token }}">
+
+    <title>{{ head_title|safe_join(' | ') }}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+
+
+    <meta name="apple-mobile-web-app-status-bar-style" content="#000000">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{site_base_url}}/themes/custom/iveric/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{site_base_url}}/themes/custom/iveric/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{site_base_url}}/themes/custom/iveric/favicon-16x16.png">
+    <link rel="manifest" href="{{site_base_url}}/themes/custom/iveric/site.webmanifest">
+    <link rel="mask-icon" href="{{site_base_url}}/themes/custom/iveric/safari-pinned-tab.svg" color="#000000">
+    <meta name="msapplication-TileColor" content="#000000">
+    <meta name="theme-color" content="#000000">
+
+    {% if logged_in %}
+    <css-placeholder token="{{ placeholder_token }}">
+    {% else %}
+    <link rel="stylesheet" media="all" href="{{site_base_url}}/themes/custom/iveric/css/style.min.css" />
+    {% endif %}
+    <js-placeholder token="{{ placeholder_token }}">
+    {{drupal_block('block_content:83560c3c-30f2-440f-a24f-ad6898acf0ce')}}
+</head>
+
+<body {{ attributes }}>
+    {{drupal_block('block_content:ce5864cc-4248-40e7-98e6-b1e74669d6d1')}}
+    {#
+    Keyboard navigation/accessibility link to main content section in
+    page.html.twig.
+    #}
+    <a href="#main-content" class="visually-hidden focusable">
+      {{ 'Skip to main content'|t }}
+    </a>
+
+
+
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" class="defs">
+    <filter id="blur">
+      <feGaussianBlur stdDeviation="20" />
+    </filter>
+  </svg>
+
+    {{ page_top }}
+    {{ page }}
+    {{ page_bottom }}
+
+  <!-- Start of HubSpot Embed Code -->
+  <script type="text/javascript" id="hs-script-loader" async defer
+    src="//js.hs-scripts.com/23875904.js?businessUnitId=814238"></script>
+  <!-- End of HubSpot Embed Code -->
+
+  {# <script src="{{site_base_url}}/themes/custom/iveric/js/vendor/jquery.min.js"></script>
+  <script src="{{site_base_url}}/themes/custom/iveric/js/vendor/popper.min.js"></script>
+  <script src="{{site_base_url}}/themes/custom/iveric/js/vendor/bootstrap.min.js"></script>
+  <script src="{{site_base_url}}/themes/custom/iveric/js/vendor/waypoints/jquery.waypoints.min.js"></script>
+  <script src="{{site_base_url}}/themes/custom/iveric/js/vendor/wow.min.js"></script>
+  <script src="{{site_base_url}}/themes/custom/iveric/js/config.js"></script>
+  <script src="{{site_base_url}}/themes/custom/iveric/js/template.js"></script>
+  <script src="{{site_base_url}}/themes/custom/iveric/js/plugins.min.js"></script>
+  <script src="{{site_base_url}}/themes/custom/iveric/js/main.min.js"></script>  #}
+
+  <script>
+    page.loader(true);
+
+    $(function () {
+      setTimeout(function () {
+        page.loader(false);
+      }, 1000);
+    });
+
+  </script>
+  <js-bottom-placeholder token="{{ placeholder_token }}">
+</body>
+
+</html>

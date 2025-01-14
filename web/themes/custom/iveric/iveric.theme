@@ -1,0 +1,26 @@
+<?php
+
+function iveric_preprocess(&$variables, $hook)
+{
+  $variables['#cache']['max-age'] = 0;
+  $variables['site_base_url'] = $GLOBALS['base_url'];
+  $current_path = \Drupal::service('path.current')->getPath();
+  $alias = \Drupal::service('path_alias.manager')->getAliasByPath($current_path);
+  $variables['current_path'] = $alias;
+  $variables['get'] = $_GET;
+  $variables['post'] = $_POST;
+  $variables['serverTimezone'] = date_default_timezone_get();
+  $variables['#attached']['library'][] = 'toolbar/toolbar';
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter() for block templates.
+ * @param array $suggestions
+ * @param array $variables
+ */
+function iveric_theme_suggestions_block_alter(array &$suggestions, array $variables)
+{
+  if (isset($variables['elements']['content']['#block_content'])) {
+    array_splice($suggestions, 1, 0, 'block__bundle__' . $variables['elements']['content']['#block_content']->bundle());
+  }
+}

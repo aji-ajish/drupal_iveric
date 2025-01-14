@@ -1,0 +1,19 @@
+<div class="banner">
+	<div class="container">
+		<div class="bannerWrap">
+			<figure class="bg">
+				<picture>
+					<source media="(min-width: 768px)" srcset="{{ file_url(content.field_image['#items'].entity.uri.value) }}">
+					<source media="(max-width: 767px)" srcset="{{ file_url(content.field_sm_image['#items'].entity.uri.value) }}">
+					<img src="{{ file_url(content.field_image['#items'].entity.uri.value) }}" alt="{{ content.field_image['#items'].alt}}">
+				</picture>
+			</figure>
+			<div class="textWrap">
+				<h1 class="h1 title">
+					{{content.field_content.0}}
+				</h1>
+
+			</div>
+		</div>
+	</div>
+</div>
