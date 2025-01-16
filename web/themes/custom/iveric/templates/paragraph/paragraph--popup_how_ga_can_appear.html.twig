@@ -1,0 +1,46 @@
+<div class="imgTitle imghead">
+	{{content.field_title.0 }}
+</div>
+<div class="card cardTabSwitch">
+	<div class="cardContent">
+		<div class="tab-content" id="cardTabContent">
+        {% for item in content.field_paragraph['#items'] %}
+                    {% set paragraph = item.entity %}
+			<div class="tab-pane {{ loop.first ? 'show active' : '' }}" id="tab_{{ loop.index }}_panel" role="tabpanel" aria-labelledby="tab_{{ loop.index }}" tabindex="0">
+				<picture>
+					<source media="(min-width: 0px)" srcset="{{ file_url(paragraph.field_image.entity.uri.value) }}">
+					<img src="{{ file_url(paragraph.field_image.entity.uri.value) }}" 
+                                    alt="{{ paragraph.field_image.alt }}">
+				</picture>
+			</div>
+            {% endfor %}
+		</div>
+	</div>
+	<div class="cardFooter">
+		<ul class="nav nav-tabs sign" id="myTab" role="tablist">
+        {% for item in content.field_paragraph['#items'] %}
+                {% set paragraph = item.entity %}
+			<li class="nav-item" role="presentation">
+				<button class="nav-link" id="tab_{{ loop.index }}" data-bs-toggle="tab" data-bs-target="#tab_{{ loop.index }}_panel" type="button" role="tab" aria-controls="tab_{{ loop.index }}_panel" aria-selected="{{ loop.first ? 'true' : 'false' }}">
+					<figure class="ico">
+                    {% if paragraph.field_svg_image.entity.uri.value or paragraph.field_svg_image_2.entity.uri.value %}
+                        <img class="imgInactive" src="{{ file_url(paragraph.field_svg_image.entity.uri.value) }}" 
+                                 alt="{{ paragraph.field_svg_image.alt }}">
+						<img class="imgActive" src="{{ file_url(paragraph.field_svg_image_2.entity.uri.value) }}" 
+                                 alt="{{ paragraph.field_svg_image_2.alt }}">
+                    {% else %}
+                        <span class="text">None</span>
+                    {% endif %}
+                    
+						
+					</figure>
+					<span>{{ paragraph.field_content.value|raw }}</span>
+				</button>
+			</li>
+            {% endfor %}
+		</ul>
+	</div>
+</div>
+<div class="footNote">
+	{{content.field_content.0 }}
+</div>
