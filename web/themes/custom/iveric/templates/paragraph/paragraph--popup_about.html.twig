@@ -1,0 +1,49 @@
+<div class="card imgCard">
+	<div class="imgTitle aboutImgHead aboutTab">
+		{{content.field_title.0}}
+	</div>
+	<div class="capsuleTabs">
+		<div class="scrollX tabOuter">
+			<ul class="nav nav-tabs" id="progrsTab" role="tablist">
+				{% for item in content.field_paragraph %}
+					<li class="nav-item" role="presentation">
+						<button class="nav-link {{ loop.first ? 'active' : '' }}" id="tab_{{ loop.index }}-tab" data-bs-toggle="tab" data-bs-target="#tab_{{ loop.index }}" type="button" role="tab" aria-controls="tab_{{ loop.index }}" aria-selected="{{ loop.first ? 'true' : 'false' }}">
+							{{ item.entity.field_title.value }}
+						</button>
+					</li>
+				{% endfor %}
+			</ul>
+		</div>
+		<div class="tab-content" id="progrsTabContent">
+			{% for item in content.field_tab_items %}
+				<div class="tab-pane show active" id="tab_abtGa_diagnosis" role="tabpanel" aria-labelledby="tab_abtGa_diagnosis-tab">
+					<figure>
+						{{ item.entity.field_content.value }}
+						<picture>
+							<source media="(max-width: 576px)" srcset="{{ file_url(content.field_svg_image_2['#items'].entity.uri.value) }}" alt="{{ content.field_svg_image_2['#items'].alt }}">
+							<source media="(min-width: 577px)" srcset="{{ file_url(content.field_svg_image['#items'].entity.uri.value) }}" alt="{{ content.field_svg_image['#items'].alt }}">
+							<img src="{{ file_url(content.field_svg_image['#items'].entity.uri.value) }}" alt="{{ content.field_svg_image['#items'].alt }}">
+						</picture>
+					</figure>
+				</div>
+			{% endfor %}
+		</div>
+
+	</div>
+
+</div>
+<div class="card icoCard">
+	<div class="cardHeader">
+		<figure>
+			<picture>
+				<source media="(min-width: 0)" srcset="{{site_base_url}}/themes/custom/iveric/images/icons/symptoms/diagnosed_people.svg">
+				<img src="{{ file_url(content.field_svg_image['#items'].entity.uri.value) }}" alt="{{ content.field_svg_image['#items'].alt }}">
+			</picture>
+		</figure>
+	</div>
+	<div class="cardContent">
+		<p>
+			{{content.field_content.0}}
+		</p>
+	</div>
+</div>

@@ -1,0 +1,21 @@
+{% if "Off" in content.field_condition[0] %}
+	<section class="askUrDoc">
+		<div class="container">
+{% endif %}
+		<div class="card {% if "On" in content.field_condition_2[0] %}_primary{% else %}_light{% endif %} _highlgt m-y-30">
+			<div class="cardContent">
+				<h4 class="{% if "On" in content.field_condition_2[0] %}h6{% else %}h6{% endif %}">
+					{{content.field_title.0}}
+				</h4>
+			</div>
+			<div class="cardFooter">
+				<a class="btn btn-outline-{% if "On" in content.field_condition_2[0] %}light{% else %}dark{% endif %} rounded {% if "On" in content.field_condition_2[0] %}navTrigger{% else %}btn-w{% endif %}" href="{{content.field_url.0['#url']}}" target="_blank" {% if "On" in content.field_condition_2[0] %}data-external-site="true"{% else %}role="button"{% endif %}>
+					{{content.field_url.0['#title']|raw}}
+					<i class="i {{ content.field_icons.0 }}"></i>
+				</a>
+			</div>
+		</div>
+{% if "Off" in content.field_condition[0] %}
+		</div>
+	</section>
+{% endif %}

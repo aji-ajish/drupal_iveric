@@ -1,0 +1,16 @@
+<section class="con_with_doc">
+    <picture>
+        <source media="(min-width: 0px)" srcset="{{ file_url(content.field_image['#items'].entity.uri.value) }}">
+        <img src="{{ file_url(content.field_image['#items'].entity.uri.value) }}" alt="{{ content.field_image['#items'].alt}}">
+    </picture>
+    <div class="askDoc">
+        <div class="askDoc-subHead">
+            {{content.field_title.0 }}
+        </div>
+        <ul class="askList">
+            {% for item in field_list_values %}
+                <li>{{ item.value }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</section>

@@ -15,6 +15,7 @@ regions:
   logo: Logo
   menu: Primary Menu
   content: Content
+  footer: Footer
   footer_logo: Footer Logo
   footer_menu: Footer Menu
   copyright: Copyright

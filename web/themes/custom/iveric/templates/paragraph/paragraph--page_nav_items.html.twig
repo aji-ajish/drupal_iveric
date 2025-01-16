@@ -1,0 +1,19 @@
+<li>
+	<a href="javascript:;" class="card rippleCard navTrigger" data-view="{{content.field_model_data_view.0 }}">
+		<div class="cardHeader">
+			<figure class="icon">
+				<img src="{{ file_url(content.field_svg_image['#items'].entity.uri.value) }}" alt="{{ content.field_svg_image['#items'].alt }}">
+			</figure>
+		</div>
+		<div class="cardContent">
+			<h3>{{content.field_title.0 }}</h3>
+			{% if content.field_content[0] %}
+				<div class="card-details">{{content.field_content.0 }}</div>
+			{% endif %}
+		</div>
+
+		<div class="cardFooter">
+			<i class="i {{content.field_icons.0 }}"></i>
+		</div>
+	</a>
+</li>

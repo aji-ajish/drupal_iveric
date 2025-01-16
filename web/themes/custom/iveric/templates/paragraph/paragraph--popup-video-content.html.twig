@@ -1,0 +1,19 @@
+<div class="imgTitle imgSp">{{content.field_title.0}}</div>
+<div class="card cardTabSwitch">
+	<div class="cardContent">
+		<div class="videoPlayer" id="{{content.field_id.0}}" data-reset="true" data-poster="{{ file_url(content.field_image['#items'].entity.uri.value) }}" alt="{{ content.field_image['#items'].alt}}" data-src="{{content.field_video_url.0['#url']}}"></div>
+		<div class="collapseContent">
+			<a class="btn btnClick collapsed" data-bs-toggle="collapse" href="{{content.field_url.0['#url']}}" role="button" aria-expanded="false" aria-controls="{{ content.field_url.0['#url'].toString()|replace({'#': ''}) }}">
+				{{content.field_url.0['#title']}}
+				<span class="arrow">
+					<i class="i i-expand_less"></i>
+				</span>
+			</a>
+			<div class="collapse collapseDtls" id="{{ content.field_url.0['#url'].toString()|replace({'#': ''}) }}">
+				<div class="content">
+					{{content.field_transcript_content.0}}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

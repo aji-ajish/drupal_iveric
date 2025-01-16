@@ -1,0 +1,38 @@
+<div class="popup popupPageViewer {{content.field_model_data_view.0 }} {% if "On" in content.field_is_video[0] %}hasVideo{% endif %}" id="{{content.field_model_data_view.0 }}" data-modal="{{content.field_model_data_view.0 }}" data-dismiss="true">
+	<div class="popContent">
+		<section class="page {{content.field_section_class.0 }}">
+			<div class="stick">
+				<div class="eyebrowText">{{content.field_title.0 }}</div>
+				<button type="button" class="close" alt="close button" data-hide="{{content.field_model_data_view.0 }}">
+					<i class="i i-close_circle"></i>
+				</button>
+			</div>
+			<div class="pageHeader">
+				<h2 class="h2">
+					{{content.field_content.0 }}
+				</h2>
+			</div>
+			<div class="pageContent">
+				{% if content.field_heading[0] %}
+					<div class="subHead">
+						{{content.field_heading.0}}
+					</div>
+				{% endif %}
+				{% if content.field_details[0] %}
+					<div class="details pt-0">
+						{{content.field_details.0}}
+					</div>
+				{% endif %}
+				<div class="form">
+				<!-- <div class="fillForm">Fill in the form below to get tips from others living with GA</div> -->
+					 {{content.field_paragraph }}
+				</div>
+
+			</div>
+			<div class="pageFooter">
+				{{content.field_navigation }}
+			</div>
+		</section>
+
+	</div>
+</div>
