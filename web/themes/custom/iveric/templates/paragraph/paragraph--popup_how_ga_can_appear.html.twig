@@ -5,7 +5,7 @@
 	<div class="cardContent">
 		<div class="tab-content" id="cardTabContent">
         {% for item in content.field_paragraph['#items'] %}
-                    {% set paragraph = item.entity %}
+            {% set paragraph = item.entity %}
 			<div class="tab-pane {{ loop.first ? 'show active' : '' }}" id="tab_{{ loop.index }}_panel" role="tabpanel" aria-labelledby="tab_{{ loop.index }}" tabindex="0">
 				<picture>
 					<source media="(min-width: 0px)" srcset="{{ file_url(paragraph.field_image.entity.uri.value) }}">

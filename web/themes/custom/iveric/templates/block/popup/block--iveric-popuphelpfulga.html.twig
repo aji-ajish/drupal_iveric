@@ -1,199 +1,32 @@
-<div
-	class="popup popupPageViewer popupHelpfulGa" id="popupHelpfulGa" data-modal="popupHelpfulGa" data-dismiss="true">
-	<!-- <div class="popHeader">
-	    </div> -->
+<div class="popup popupPageViewer {{content.field_model_data_view.0 }} {% if "On" in content.field_is_video[0] %}hasVideo{% endif %}" id="{{content.field_model_data_view.0 }}" data-modal="{{content.field_model_data_view.0 }}" data-dismiss="true">
 	<div class="popContent">
-		<section class="page helpfulGA">
+		<section class="page {{content.field_section_class.0 }}">
 			<div class="stick">
-				<div class="eyebrowText">Helpful GA Resources</div>
-				<button type="button" class="close" alt="close button" data-hide="popupHelpfulGa">
+				<div class="eyebrowText">{{content.field_title.0 }}</div>
+				<button type="button" class="close" alt="close button" data-hide="{{content.field_model_data_view.0 }}">
 					<i class="i i-close_circle"></i>
 				</button>
 			</div>
 			<div class="pageHeader">
 				<h2 class="h2">
-					Helping you
-					<mark>understand GA</mark>
+					{{content.field_content.0 }}
 				</h2>
 			</div>
 			<div class="pageContent">
-				<div class="subHead">
-					Downloadable resources for those with GA and their caregivers
-				</div>
-				<section class="cardGroup">
-					<div class="row">
-						<div class="col-md-12">
-							<div class="card">
-								<div class="cardHeader">Doctor Discussion Guide</div>
-								<div class="cardContent">Tips on what to ask your doctor about GA</div>
-								<div class="cardFooter">
-									<a href="{{site_base_url}}/themes/custom/iveric/docs/US-GA-2300046_patient_unbranded_doctor_discussion_guide_doc.pdf" target="_blank" role="button" class="btn btn-outline-primary rounded text-uppercase">
-										<span>Download</span>
-										<i class="i i-download"></i>
-									</a>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-12">
-							<div class="card">
-								<div class="cardHeader">About GA Brochure</div>
-								<div class="cardContent">Understanding GA and how it can affect you</div>
-								<div class="cardFooter">
-									<a href="{{site_base_url}}/themes/custom/iveric/docs/US-GA-2300049_patient_unbranded_pdf_brochure_amd.pdf" target="_blank" role="button" class="btn btn-outline-primary rounded text-uppercase">
-										<span>Download</span>
-										<i class="i i-download"></i>
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</section>
-
-				<div class="card _primary _highlgt m-y-30">
-					<div class="cardContent">
-						<h4 class="h4">
-							Learn about an FDA-approved treatment for geographic atrophy that may be right for you.
-						</h4>
-					</div>
-					<div class="cardFooter">
-						<a class="btn btn-outline-light rounded navTrigger" href="https://izervay.com" target="_blank" data-external-site="true">
-							<span>Discover a&nbsp;treatment</span>
-							<i class="i i-arrow_forward"></i>
-						</a>
-					</div>
-				</div>
-
-				<section class="supportOrg">
-					<div class="supportHeader">
-						Check out these organizations and communities who help support people affected by vision-threatening
-						              diseases.
-					</div>
-					<div class="cardOrg row justify-content-center">
-						<div class="col-lg-8 col-md-12">
-							<div class="card">
-								<div class="cardHeader">
-									<figure>
-										<picture>
-											<source media="(min-width: 768px)" srcset="{{site_base_url}}/themes/custom/iveric/images/org/bright.svg">
-											<source media="(max-width: 767px)" srcset="{{site_base_url}}/themes/custom/iveric/images/org/bright-sm.svg">
-											<img src="{{site_base_url}}/themes/custom/iveric/images/org/bright.svg" alt="Bright focus foundation logo">
-										</picture>
-									</figure>
-								</div>
-								<div class="cardFooter">
-									<a href="https://www.brightfocus.org/" target="_blank" class="btn btn-link rounded btn-primary stretched-link">
-										<span>SEE MORE</span>
-										<i class="i i-see_more"></i>
-									</a>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-8 col-md-12">
-							<div class="card">
-								<div class="cardHeader">
-									<figure>
-										<picture>
-											<source media="(min-width: 768px)" srcset="{{site_base_url}}/themes/custom/iveric/images/org/fight.svg">
-											<source media="(max-width: 767px)" srcset="{{site_base_url}}/themes/custom/iveric/images/org/fight-sm.svg">
-											<img src="{{site_base_url}}/themes/custom/iveric/images/org/fight.svg" alt="Fighting Blindness Logo">
-										</picture>
-									</figure>
-								</div>
-								<div class="cardFooter">
-									<a href="https://www.fightingblindness.org/" target="_blank" class="btn btn-link rounded btn-primary stretched-link">
-										<span>SEE MORE</span>
-										<i class="i i-see_more"></i>
-									</a>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-8 col-md-12">
-							<div class="card">
-								<div class="cardHeader ">
-									<figure>
-										<picture>
-											<source media="(min-width: 768px)" srcset="{{site_base_url}}/themes/custom/iveric/images/org/prevent.svg">
-											<source media="(max-width: 767px)" srcset="{{site_base_url}}/themes/custom/iveric/images/org/prevent-sm.svg">
-											<img src="{{site_base_url}}/themes/custom/iveric/images/org/prevent.svg" alt="Prevent Blindness logo">
-										</picture>
-									</figure>
-								</div>
-								<div class="cardFooter">
-									<a href="https://preventblindness.org/" target="_blank" class="btn btn-link rounded btn-primary stretched-link">
-										<span>SEE MORE</span>
-										<i class="i i-see_more"></i>
-									</a>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-8 col-md-12">
-							<div class="card ">
-								<div class="cardHeader">
-									<figure>
-										<picture>
-											<source media="(min-width: 768px)" srcset="{{site_base_url}}/themes/custom/iveric/images/org/lighthouse.svg">
-											<source media="(max-width: 767px)" srcset="{{site_base_url}}/themes/custom/iveric/images/org/lighthouse-sm.svg">
-											<img src="{{site_base_url}}/themes/custom/iveric/images/org/lighthouse.svg" alt="Lighthouse Guild logo">
-										</picture>
-									</figure>
-								</div>
-								<div class="cardFooter">
-									<a href="https://lighthouseguild.org/" target="_blank" class="btn btn-link rounded btn-primary stretched-link">
-										<span>SEE MORE</span>
-										<i class="i i-see_more"></i>
-									</a>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-8 col-md-12">
-							<div class="card ">
-								<div class="cardHeader">
-									<figure>
-										<picture>
-											<source media="(min-width: 768px)" srcset="{{site_base_url}}/themes/custom/iveric/images/org/md-logo.png">
-											<source media="(max-width: 767px)" srcset="{{site_base_url}}/themes/custom/iveric/images/org/md-logo.png">
-											<img src="{{site_base_url}}/themes/custom/iveric/images/org/md-logo.png" alt="MD Logo">
-										</picture>
-									</figure>
-								</div>
-								<div class="cardFooter">
-									<a href="https://maculardegeneration.net/" target="_blank" class="btn btn-link rounded btn-primary stretched-link">
-										<span>SEE MORE</span>
-										<i class="i i-see_more"></i>
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</section>
+				{% if content.field_heading[0] %}
+			<div class="subHead">
+				{{content.field_heading.0}}
+			</div>
+		   {% endif %}
+          {% if content.field_details[0] %}
+			<div class="details pt-0">
+				{{content.field_details.0}}
+			</div>
+			{% endif %}	
+				{{content.field_paragraph }}
 			</div>
 			<div class="pageFooter">
-				<a href="javascript:;" class="card rippleCard linkCard navTrigger" data-view="popupHearFrom">
-					<div class="cardHeader">
-						<figure class="icon">
-							<img src="{{site_base_url}}/themes/custom/iveric/images/icons/animated/hear_from_others_with_ga.svg" alt="hear_from_others_with_ga">
-						</figure>
-					</div>
-					<div class="cardContent">
-						<h3>Hear from Others with GA</h3>
-					</div>
-					<div class="cardFooter">
-						<i class="i i-arrow_long_left"></i>
-					</div>
-				</a>
-				<a href="javascript:;" class="card rippleCard linkCard navTrigger" data-view="popupGetConnected">
-					<div class="cardHeader">
-						<figure class="icon">
-							<img src="{{site_base_url}}/themes/custom/iveric/images/icons/animated/get_connected.svg" alt="get_connected">
-						</figure>
-					</div>
-					<div class="cardContent">
-						<h3>Get Connected</h3>
-					</div>
-					<div class="cardFooter">
-						<i class="i i-arrow_long_right"></i>
-					</div>
-				</a>
+				{{content.field_navigation }}
 			</div>
 		</section>
 

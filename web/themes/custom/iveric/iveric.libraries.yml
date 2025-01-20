@@ -18,7 +18,3 @@ global-styling:
     - core/drupal
     - core/drupalSettings
     - core/drupal.toolbar
-  toolbar:
-    dependencies:
-      - core/drupal.toolbar
-      - core/jquery

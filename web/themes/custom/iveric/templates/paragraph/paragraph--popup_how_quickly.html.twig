@@ -1,0 +1,44 @@
+<div class="imgTitle aboutImgHead">
+	{{content.field_title.0}}
+</div>
+<div class="capsuleTabs">
+	<ul class="nav nav-tabs quicktab" id="progrsTab" role="tablist">
+    {% for item in content.field_paragraph['#items'] %}
+            {% set paragraph = item.entity %}
+		<li class="nav-item" role="presentation">
+			<button class="nav-link {{ loop.first ? 'active' : '' }}" id="tab_{{ loop.index }}-tab" data-bs-toggle="tab" data-bs-target="#tab_{{ loop.index }}" type="button" role="tab" aria-controls="tab_{{ loop.index }}" aria-selected="{{ loop.first ? 'true' : 'false' }}">
+            {{ paragraph.field_title.value }}</button>
+		</li>
+        {% endfor %}
+	</ul>
+	<div class="tab-content" id="progrsTabContent">
+
+		<figure>
+			<picture>
+				<source media="(max-width:575px)" srcset="{{ file_url(content.field_sm_image['#items'].entity.uri.value) }}" alt="{{ content.field_sm_image['#items'].alt}}">
+				<source media="(min-width: 576px)" srcset="{{ file_url(content.field_image['#items'].entity.uri.value) }}" alt="{{ content.field_image['#items'].alt}}">
+				<img src="{{ file_url(content.field_image['#items'].entity.uri.value) }}" alt="{{ content.field_image['#items'].alt}}">
+			</picture>
+		</figure>
+        {% for item in content.field_paragraph['#items'] %}
+            {% set paragraph = item.entity %}
+            <div class="tab-pane fade {{ loop.first ? 'show active' : '' }}" id="tab_{{ loop.index }}" role="tabpanel" aria-labelledby="tab_{{ loop.index }}-tab">
+                <figure>
+                    <picture>
+                        <source media="(min-width: 0px)" srcset="{{ file_url(paragraph.field_svg_image.entity.uri.value) }}">
+                        <img src="{{ file_url(paragraph.field_svg_image.entity.uri.value) }}" 
+                                    alt="{{ paragraph.field_svg_image.alt }}">
+                    </picture>
+                </figure>
+            </div>
+        {% endfor %}
+	</div>
+
+</div>
+<p class="quickNote">{{content.field_content.0}}</p>
+<div class="details quik-details">
+    {{content.field_transcript_content.0}}
+</div>
+<div class="challenges">
+	{{content.field_paragraph_2}}
+</div>
